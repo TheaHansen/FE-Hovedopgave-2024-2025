@@ -1,5 +1,6 @@
 const apiUrl = process.env.REACT_APP_API_URL;
 
+//Together
 function getRequest(endpoint: string): void {
   if (!apiUrl) {
     console.log("API URL is not defined");
