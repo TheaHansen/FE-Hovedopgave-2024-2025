@@ -5,6 +5,8 @@ import "../customCSS/productCard/basketButton.css";
 import { useEffect, useState } from "react";
 import { getRequest } from "../services/requests";
 
+//Together
+
 interface Product {
   id: number;
   title: string;
@@ -13,7 +15,6 @@ interface Product {
   imageUrl: string;
 }
 
-//Together
 function ProductCard({ productId }: { productId: number }) {
   const [product, setProduct] = useState<Product | null>(null);
 
