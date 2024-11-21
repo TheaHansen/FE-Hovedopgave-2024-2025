@@ -1,0 +1,5 @@
+.card .basket-btn {
+  background-image: linear-gradient(to right, #b6e2fc, #45baff);
+  border-radius: 30px;
+  border: none;
+}

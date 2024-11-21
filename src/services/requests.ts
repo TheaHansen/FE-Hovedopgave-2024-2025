@@ -1,15 +1,19 @@
 const apiUrl = process.env.REACT_APP_API_URL;
 
 //Together
-function getRequest(endpoint: string): void {
+async function getRequest(endpoint: string): Promise<any> {
   if (!apiUrl) {
     console.log("API URL is not defined");
-    return;
+    return null;
   }
-  fetch(`${apiUrl}${endpoint}`)
-    .then((response) => response.json())
-    .then((res) => console.log(res))
-    .catch((error) => console.error("Error fetching data:", error));
+  try {
+    const response = await fetch(`${apiUrl}${endpoint}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
 }
 
 export { getRequest };
