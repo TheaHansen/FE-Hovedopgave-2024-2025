@@ -3,6 +3,7 @@ import "./App.css";
 import { getRequest } from "./services/requests";
 import NavigationBar from "./components/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import LogoHeader from "./components/LogoHeader";
 
 function App() {
   useEffect(() => {
@@ -11,7 +12,8 @@ function App() {
   return (
     <div>
       <h1>Hej</h1>
-      <NavigationBar/>
+      <LogoHeader />
+      <NavigationBar />
     </div>
   );
 }
