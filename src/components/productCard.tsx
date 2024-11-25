@@ -1,37 +1,14 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Image from "../images/IMG_1618.jpg";
 import "../customCSS/productCard/basketButton.css";
-import { useEffect, useState } from "react";
-import { getRequest } from "../services/requests";
+import Product from "./Product.interfaces";
 
 //Together
 
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  imageUrl: string;
-}
-
-function ProductCard({ productId }: { productId: number }) {
-  const [product, setProduct] = useState<Product | null>(null);
-
-  useEffect(() => {
-    const endpoint = `products/${productId}`;
-
-    console.log("Product image " + product?.imageUrl);
-
-    getRequest(endpoint).then((data) => {
-      if (data) {
-        setProduct(data);
-      }
-    });
-  }, [productId, product?.imageUrl]);
+function ProductCard({ product }: { product: Product }) {
 
   if (!product) {
-    return <p>Loading..</p>;
+    return <p>Loading...</p>;
   }
 
   return (
