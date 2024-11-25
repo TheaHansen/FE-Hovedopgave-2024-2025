@@ -1,3 +1,4 @@
+//Together
 interface Product {
     id: number;
     title: string;

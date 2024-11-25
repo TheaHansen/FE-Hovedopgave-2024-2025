@@ -1,21 +1,23 @@
-import { useEffect } from "react";
 import "./App.css";
-import { getRequest } from "./services/requests";
-import ProductCard from "./components/ProductCard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProductContainer from "./components/ProductContainer";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
+//Together
 function App() {
-  // useEffect(() => {
-  //   getRequest("/products");
-  // });
   return (
-    <div>
-      <h1>Hej</h1>
+    <Router>
+      <div>
+        <h1>Hej</h1>
+        <Routes>
+          <Route path="/products" element={<ProductContainer endpoint="products" />} />
+          <Route path="/" element={<ProductContainer endpoint="products/tilbud" />} />
+        </Routes>
 
-      <ProductContainer />
-    </div>
+      </div>
+    </Router>
   );
+  
 }
 
 export default App;
