@@ -1,6 +1,5 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import "../customCSS/productCard/basketButton.css";
 import Product from "./Product.interfaces";
 
 //Together
@@ -17,7 +16,7 @@ function ProductCard({ product }: { product: Product }) {
       <Card.Body>
         <Card.Title>{product.title}</Card.Title>
         <Card.Text>{product.price} DKK</Card.Text>
-        <Button className="basket-btn">Tilføj til kurv</Button>
+        <Button variant="dark">Tilføj til kurv</Button>
       </Card.Body>
     </Card>
   );
