@@ -2,11 +2,10 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "../customCSS/productCard/shortDescription.css";
 import Product from "./Product.interfaces";
+import StockStatus from "./stockStatus/StockStatus";
 
 //Together
-
 function ProductCard({ product }: { product: Product }) {
-
   if (!product) {
     return <p>Loading...</p>;
   }
@@ -18,6 +17,7 @@ function ProductCard({ product }: { product: Product }) {
         <Card.Title>{product.title}</Card.Title>
         <Card.Text className="short-description-fixed text-muted small">{product.shortDescription}</Card.Text>
         <Card.Text>{product.price} DKK</Card.Text>
+        <StockStatus stockStatusFromProduct={product.stockStatus} />
         <Button variant="dark">Tilføj til kurv</Button>
       </Card.Body>
     </Card>
