@@ -16,7 +16,7 @@ function ProductCard({ product }: { product: Product }) {
       <Card.Img variant="top" src={require(`../images/${product.imageUrl}`)} />
       <Card.Body className="card-body-fixed">
         <Card.Title>{product.title}</Card.Title>
-        <Card.Text className="text-muted small">{product.shortDescription}</Card.Text>
+        <Card.Text className="short-description-fixed text-muted small">{product.shortDescription}</Card.Text>
         <Card.Text>{product.price} DKK</Card.Text>
         <Button className="basket-btn">Tilføj til kurv</Button>
       </Card.Body>
