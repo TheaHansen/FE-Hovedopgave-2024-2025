@@ -18,7 +18,7 @@ function ProductCard({ product }: { product: Product }) {
         <Card.Title>{product.title}</Card.Title>
         <Card.Text className="short-description-fixed text-muted small">{product.shortDescription}</Card.Text>
         <Card.Text>{product.price} DKK</Card.Text>
-        <Button className="basket-btn">Tilføj til kurv</Button>
+        <Button variant="dark">Tilføj til kurv</Button>
       </Card.Body>
     </Card>
   );
