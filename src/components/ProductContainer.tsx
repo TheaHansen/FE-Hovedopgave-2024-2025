@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Product from "./Product.interfaces";
 import { getRequest } from "../services/requests";
-import ProductCard from "./ProductCard";
+import ProductCard from "./productCard";
 
 //Together
 interface ProductContainerProps{
