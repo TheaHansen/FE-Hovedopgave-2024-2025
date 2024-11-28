@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Product from "./Product.interfaces";
-import { getRequest } from "../services/requests";
+import { getRequest } from "../../services/requests";
 import ProductCard from "./productCard";
 
 //Together
@@ -20,7 +20,7 @@ function ProductContainer({ endpoint }: ProductContainerProps) {
   }, [endpoint]);
 
   return (
-    <div className="container pb-3">
+    <div className="container pb-3 pt-5">
       <div className="row row-cols-4 g-5">
         {products.map((product) => (
           <div className="col" key={product.id}>
