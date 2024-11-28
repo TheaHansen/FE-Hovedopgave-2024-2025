@@ -1,8 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import "../customCSS/productCard/shortDescription.css";
-import Product from "./product/Product.interfaces";
-import StockStatus from "./stockStatus/StockStatus";
+import "../../customCSS/productCard/shortDescription.css";
+import Product from "../product/Product.interfaces";
+import StockStatus from "../stockStatus/StockStatus";
 
 //Together
 function ProductCard({ product }: { product: Product }) {
@@ -12,7 +12,10 @@ function ProductCard({ product }: { product: Product }) {
 
   return (
     <Card className="card text-center" style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={require(`../images/${product.imageUrl}`)} />
+      <Card.Img
+        variant="top"
+        src={require(`../../images/${product.imageUrl}`)}
+      />
       <Card.Body className="card-body-fixed">
         <Card.Title>{product.title}</Card.Title>
         <Card.Text className="short-description-fixed text-muted small">
