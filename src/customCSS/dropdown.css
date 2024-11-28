@@ -1,0 +1,47 @@
+.custom-dropdown button {
+    background-color: white;
+    border: 1px solid grey; 
+    color: grey;
+    transition: none;
+}
+
+.custom-dropdown button:hover {
+    background-color: rgb(226, 226, 226);
+    border: 1px solid rgb(47, 47, 47); 
+    color: rgb(22, 21, 21);
+    transition: none;
+}
+
+.custom-dropdown .dropdown-item:hover {
+    color: rgb(47, 47, 47);
+    background-color: rgb(226, 226, 226);               
+}
+
+.custom-dropdown button:focus, 
+.custom-dropdown button:active,
+.custom-dropdown button:focus.show {
+    background-color: rgb(226, 226, 226);
+    border: 1px solid rgb(47, 47, 47);
+    color: rgb(22, 21, 21);
+    outline: none;
+    box-shadow: none;
+    transition: none;
+}
+
+.custom-dropdown button:focus:not(.show),
+.custom-dropdown button:not(:focus):not(.show) {
+    background-color: white;
+    border-color: grey;
+    color: grey;
+    outline: none;
+    box-shadow: none;
+    transition: none;
+}
+
+/* .custom-dropdown button:focus {
+    background-color: white;
+    border-color: grey;
+    color: grey;
+    outline: none;
+    box-shadow: none;
+} */
