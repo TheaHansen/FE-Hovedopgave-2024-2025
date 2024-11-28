@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "../customCSS/navbar/icon.css";
+import "../customCSS/navbar/dropdown.css";
 
 //Made together
 function NavigationBar() {
@@ -12,7 +13,7 @@ function NavigationBar() {
       className="d-flex position-relative h-60 border border-secondary"
     >
       <Container>
-        <Nav className="ml-auto position-absolute start-50 translate-middle-x">
+        <Nav className="ml-auto position-absolute start-50 translate-middle-x custom-z-index">
           <NavDropdown title="Til tandlægen" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Procedure</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Tøj</NavDropdown.Item>
