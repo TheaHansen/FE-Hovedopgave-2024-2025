@@ -7,7 +7,7 @@ function LogoHeader() {
   return (
     <Navbar>
       <Container className="justify-content-center">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             src={LogoImage}
             width="200"

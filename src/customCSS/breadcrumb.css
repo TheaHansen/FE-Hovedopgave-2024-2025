@@ -1,0 +1,14 @@
+.clickable-breadcrumb a {
+    color: grey !important; 
+    text-decoration: none;
+}
+
+.clickable-breadcrumb:hover a {
+    color: rgb(71, 71, 71) !important;
+    text-decoration: underline;
+}
+
+.active-breadcrumb {
+    color: rgb(35, 35, 35) !important;
+}
+

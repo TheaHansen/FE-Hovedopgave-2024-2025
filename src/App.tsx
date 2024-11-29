@@ -7,7 +7,7 @@ import NavigationBar from "./components/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Topbar from "./components/Topbar";
 import LogoHeader from "./components/LogoHeader";
-
+import ProductOverview from "./pages/ProductOverview";
 
 //Together
 function App() {
@@ -18,13 +18,33 @@ function App() {
         <LogoHeader />
         <NavigationBar />
         <Routes>
-          <Route path="/products" element={<ProductContainer endpoint="products" />} />
-          <Route path="/" element={<ProductContainer endpoint="products/tilbud" />} />
+          <Route
+            path="/"
+            element={
+              <ProductOverview
+                headline="Gode tilbud"
+                endpoint="products/tilbud"
+              />
+            }
+          />
+          <Route
+            path="/products"
+            element={<ProductContainer endpoint="products" />}
+          />
+          <Route
+            path="/tilbud"
+            element={
+              <ProductOverview
+                headline="Tilbud"
+                endpoint="products/tilbud"
+                breadcrumbItems={["Hjem", "Tilbud"]}
+              />
+            }
+          />
         </Routes>
       </div>
     </Router>
   );
-  
 }
 
 export default App;
