@@ -9,7 +9,6 @@ import Topbar from "./components/Topbar";
 import LogoHeader from "./components/LogoHeader";
 import ProductOverview from "./pages/ProductOverview";
 
-
 //Together
 function App() {
   return (
@@ -19,13 +18,33 @@ function App() {
         <LogoHeader />
         <NavigationBar />
         <Routes>
-          <Route path="/products" element={<ProductContainer endpoint="products" />} />
-          <Route path="/tilbud" element={<ProductOverview headline="Tilbud" endpoint="products/tilbud" breadcrumbItems={["Hjem", "Tilbud"]}/>} />
+          <Route
+            path="/"
+            element={
+              <ProductOverview
+                headline="Gode tilbud"
+                endpoint="products/tilbud"
+              />
+            }
+          />
+          <Route
+            path="/products"
+            element={<ProductContainer endpoint="products" />}
+          />
+          <Route
+            path="/tilbud"
+            element={
+              <ProductOverview
+                headline="Tilbud"
+                endpoint="products/tilbud"
+                breadcrumbItems={["Hjem", "Tilbud"]}
+              />
+            }
+          />
         </Routes>
       </div>
     </Router>
   );
-  
 }
 
 export default App;
