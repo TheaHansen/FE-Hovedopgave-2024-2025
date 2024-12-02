@@ -1,4 +1,4 @@
-import ProductContainer from "../components/ProductContainer";
+import ProductContainer from "../components/product/ProductContainer";
 import CustomBreadcrumb from "../components/Breadcrumb";
 import FilterDropdown from "../components/Dropdown";
 
