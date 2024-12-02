@@ -1,13 +1,13 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
-import LogoImage from "../images/logo/odontologicLogoSized.jpg";
+import LogoImage from "../../images/logo/odontologicLogoSized.jpg";
 
 //Made by Thea
 function LogoHeader() {
   return (
     <Navbar>
       <Container className="justify-content-center">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             src={LogoImage}
             width="200"

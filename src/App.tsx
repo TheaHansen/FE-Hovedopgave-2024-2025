@@ -7,6 +7,7 @@ import NavigationBar from "./components/topbars/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Topbar from "./components/topbars/Topbar";
 import LogoHeader from "./components/topbars/LogoHeader";
+import ProductOverview from "./pages/ProductOverview";
 
 //Together
 function App() {
@@ -18,12 +19,23 @@ function App() {
         <NavigationBar />
         <Routes>
           <Route
-            path="/products"
-            element={<ProductContainer endpoint="products" />}
+            path="/"
+            element={
+              <ProductOverview
+                headline="Gode tilbud"
+                endpoint="products/tilbud"
+              />
+            }
           />
           <Route
-            path="/"
-            element={<ProductContainer endpoint="products/tilbud" />}
+            path="/tilbud"
+            element={
+              <ProductOverview
+                headline="Tilbud"
+                endpoint="products/tilbud"
+                breadcrumbItems={["Hjem", "Tilbud"]}
+              />
+            }
           />
         </Routes>
       </div>
