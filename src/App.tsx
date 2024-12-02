@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Topbar from "./components/topbars/Topbar";
 import LogoHeader from "./components/topbars/LogoHeader";
 import ProductOverview from "./pages/ProductOverview";
+import FrontPage from "./pages/FrontPage";
 
 //Together
 function App() {
@@ -21,10 +22,7 @@ function App() {
           <Route
             path="/"
             element={
-              <ProductOverview
-                headline="Gode tilbud"
-                endpoint="products/tilbud"
-              />
+              <FrontPage headline="Tilbud" endpoint="products/incarousel" />
             }
           />
           <Route
