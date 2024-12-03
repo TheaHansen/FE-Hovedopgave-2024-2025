@@ -1,0 +1,19 @@
+.quantity-picker {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    border: 1px solid #dbdbdb;
+    
+  }
