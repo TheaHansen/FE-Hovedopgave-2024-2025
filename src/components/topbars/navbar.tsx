@@ -33,7 +33,7 @@ function NavigationBar() {
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Dekoration</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href="tilbud">Tilbud</Nav.Link>
+          <Nav.Link href="/tilbud">Tilbud</Nav.Link>
         </Nav>
         <div className="d-flex gap-4 end-5">
           <svg
