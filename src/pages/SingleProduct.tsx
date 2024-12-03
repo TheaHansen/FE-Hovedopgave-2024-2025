@@ -39,7 +39,7 @@ function SingleProduct({ endpoint, breadcrumbItems }: SingleProductProps) {
     
     return (
 
-        <div className="container mt-4">
+        <div className="container mt-4 mb-4">
             <div className="row g-5">
                 <div className="col-md-6 pr-md-5">
                     <img
@@ -53,7 +53,7 @@ function SingleProduct({ endpoint, breadcrumbItems }: SingleProductProps) {
                     <h1 className="mb-4">{product.title}</h1>
                     <h6>{product.shortDescription}</h6>
                     <h6>{product.description}</h6>
-                    <h6>${product.price.toFixed(2)} DKK</h6>
+                    <h6>{product.price.toFixed(2)} DKK</h6>
                     <h6 className="d-flex align-items-center mt-2">Lagerstatus: <StockStatus stockStatusFromProduct={product.stockStatus} /></h6>
                     <div className="d-flex align-items-center mt-4 gap-3">
                         <QuantityPicker />
