@@ -1,3 +1,4 @@
+//Made by Thea
 function QuoteHeader({ quote }: { quote: string }) {
   return (
     <div
