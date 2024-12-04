@@ -29,7 +29,7 @@ function CustomCarousel({ endpoint }: CustomCarouselProps) {
         className="border carousel-border"
       >
         {products.map((product) => (
-          <Carousel.Item>
+          <Carousel.Item key={product.id}>
             <img
               src={require(`../images/${product.imageUrl}`)}
               className="object-fit-cover"

@@ -3,6 +3,7 @@ import {
   TextEncoder as NodeTextEncoder,
   TextDecoder as NodeTextDecoder,
 } from "util";
+import "@testing-library/jest-dom/extend-expect";
 
 // Polyfill the global environment for TextEncoder and TextDecoder
 (globalThis as any).TextEncoder = NodeTextEncoder; // Force the type to 'any'
