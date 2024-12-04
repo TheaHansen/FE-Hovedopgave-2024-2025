@@ -32,6 +32,7 @@ function CustomCarousel({ endpoint }: CustomCarouselProps) {
           <Carousel.Item>
             <img
               src={require(`../images/${product.imageUrl}`)}
+              className="object-fit-cover"
               width="800"
               height="500"
               alt="Product on sale"
