@@ -9,6 +9,7 @@ function QuoteHeader({ quote }: { quote: string }) {
         justifyContent: "center",
         alignItems: "center",
       }}
+      data-testid="quote-header"
     >
       <span
         style={{
