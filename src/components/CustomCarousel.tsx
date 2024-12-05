@@ -43,7 +43,7 @@ function CustomCarousel({ endpoint }: CustomCarouselProps) {
               <p>{product.price} DKK</p>
               <ToPageButton
                 children="Køb her!"
-                to={`/products/${product.id}`}
+                to={`/product/${product.id}`}
               />
             </Carousel.Caption>
           </Carousel.Item>
