@@ -11,7 +11,11 @@ function ProductCard({ product }: { product: Product }) {
   }
 
   return (
-    <Card className="card text-center" style={{ width: "18rem" }}>
+    <Card
+      className="card text-center"
+      style={{ width: "18rem" }}
+      data-testid="product-card"
+    >
       <Card.Img
         variant="top"
         src={require(`../../images/${product.imageUrl}`)}

@@ -1,3 +1,4 @@
+//Made by Thea
 function QuoteHeader({ quote }: { quote: string }) {
   return (
     <div
@@ -8,6 +9,7 @@ function QuoteHeader({ quote }: { quote: string }) {
         justifyContent: "center",
         alignItems: "center",
       }}
+      data-testid="quote-header"
     >
       <span
         style={{

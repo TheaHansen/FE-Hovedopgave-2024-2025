@@ -22,7 +22,10 @@ function App() {
           <Route
             path="/"
             element={
-              <FrontPage headline="Tilbud" endpoint="products/incarousel" />
+              <FrontPage
+                headline="Tilbud"
+                endpoint="products/incarousel/true"
+              />
             }
           />
           <Route
