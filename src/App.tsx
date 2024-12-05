@@ -9,6 +9,7 @@ import Topbar from "./components/topbars/Topbar";
 import LogoHeader from "./components/topbars/LogoHeader";
 import ProductOverview from "./pages/ProductOverview";
 import SingleProduct from "./pages/SingleProduct";
+import FrontPage from "./pages/FrontPage";
 
 //Together
 function App() {
@@ -22,9 +23,9 @@ function App() {
           <Route
             path="/"
             element={
-              <ProductOverview
-                headline="Gode tilbud"
-                endpoint="products/tilbud"
+              <FrontPage
+                headline="Tilbud"
+                endpoint="products/incarousel/true"
               />
             }
           />
