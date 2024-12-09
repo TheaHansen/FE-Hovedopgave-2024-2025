@@ -50,6 +50,12 @@ function App() {
                 />
               }
             />
+            <Route
+              path="/products"
+              element={
+                <ProductOverview headline="Tilbud" endpoint="products" />
+              }
+            />
           </Routes>
         </div>
       </BasketProvider>
