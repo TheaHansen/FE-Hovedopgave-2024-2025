@@ -1,0 +1,32 @@
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 14px;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s 0.3s;
+    opacity: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.search-input.show {
+    opacity: 1;
+    width: 150px;
+    visibility: visible;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+}
