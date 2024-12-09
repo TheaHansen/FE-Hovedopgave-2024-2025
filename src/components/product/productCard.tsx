@@ -25,7 +25,7 @@ function ProductCard({ product }: { product: Product }) {
           </Card.Text>
           <Card.Text>{product.price} DKK</Card.Text>
           <StockStatus stockStatusFromProduct={product.stockStatus} />
-          <Button variant="dark">Tilføj til kurv</Button>
+          <Button variant="dark">Se mere</Button>
         </Card.Body>
       </Card>
     </Link>
