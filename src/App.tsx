@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Topbar from "./components/topbars/Topbar";
 import LogoHeader from "./components/topbars/LogoHeader";
 import ProductOverview from "./pages/ProductOverview";
+import SingleProduct from "./pages/SingleProduct";
 import FrontPage from "./pages/FrontPage";
 
 //Together
@@ -22,7 +23,10 @@ function App() {
           <Route
             path="/"
             element={
-              <FrontPage headline="Tilbud" endpoint="products/incarousel" />
+              <FrontPage
+                headline="Tilbud"
+                endpoint="products/incarousel/true"
+              />
             }
           />
           <Route
@@ -32,6 +36,15 @@ function App() {
                 headline="Tilbud"
                 endpoint="products/tilbud"
                 breadcrumbItems={["Hjem", "Tilbud"]}
+              />
+            }
+          />
+          <Route
+            path="/product/:id"
+            element={
+              <SingleProduct
+                endpoint="products"
+                breadcrumbItems={["Hjem", "Tilbud", "Produkt"]}
               />
             }
           />
