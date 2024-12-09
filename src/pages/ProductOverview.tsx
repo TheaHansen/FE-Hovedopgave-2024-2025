@@ -17,7 +17,9 @@ function ProductOverview({
     return (
       <div className="container mt-4">
         {breadcrumbItems && <CustomBreadcrumb items={breadcrumbItems} />}
-        <h1 className="mb-4">{headline}</h1>
+        <h1 className="mb-4" data-testid="headline">
+          {headline}
+        </h1>
         <div className="d-flex">
           <FilterDropdown
             title="Lager status"
