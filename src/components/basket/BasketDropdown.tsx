@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Badge, Dropdown } from "react-bootstrap";
+import { Badge, Button, Dropdown } from "react-bootstrap";
 import "../../customCSS/navbar/icon.css";
 import "../../customCSS/navbar/basketDropdown.css";
 import { useBasket } from "../../context/BasketContext";
@@ -64,15 +64,27 @@ function BasketDropdown() {
             ref={dropdownRef}
           >
             {basketItems.length > 0 ? (
-              basketItems.map((item) => (
-                <BasketItem
-                  key={item.id}
-                  id={item.id}
-                  quantity={item.quantity}
-                />
-              ))
+              basketItems
+                .slice(0, 4)
+                .map((item) => (
+                  <BasketItem
+                    key={item.id}
+                    id={item.id}
+                    quantity={item.quantity}
+                  />
+                ))
             ) : (
               <p>Your basket is empty.</p>
+            )}
+            {/* If there are't any item in the basket, it won't show the button. If there are more than 4 items added, it will change the text */}
+            {basketItems.length === 0 ? null : basketItems.length > 4 ? (
+              <Button variant="dark" className="w-100">
+                Se resten af kurven
+              </Button>
+            ) : (
+              <Button variant="dark" className="w-100">
+                Gå til kurv
+              </Button>
             )}
           </Dropdown.Menu>
         )}
