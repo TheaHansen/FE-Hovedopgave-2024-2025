@@ -1,6 +1,7 @@
 import ProductContainer from "../components/product/ProductContainer";
 import CustomBreadcrumb from "../components/Breadcrumb";
 import FilterDropdown from "../components/Dropdown";
+import { useSearchParams } from "react-router-dom";
 
 interface ProductOverviewProps {
   headline: string;
@@ -14,6 +15,11 @@ function ProductOverview({
   breadcrumbItems,
 }: ProductOverviewProps) {
   {
+    const [searchParams] = useSearchParams();
+    const query = searchParams.get("query");
+    const dynamicEndpoint = query
+    ? `products/search?name=${encodeURIComponent(query)}`
+    : endpoint;
     return (
       <div className="container mt-4">
         {breadcrumbItems && <CustomBreadcrumb items={breadcrumbItems} />}
@@ -30,7 +36,7 @@ function ProductOverview({
             dropdownLabels={["Tøj", "Tilbud", "Bor", "Dekoration"]}
           />
         </div>
-        <ProductContainer endpoint={endpoint} />
+        <ProductContainer endpoint={dynamicEndpoint} />
       </div>
     );
   }
