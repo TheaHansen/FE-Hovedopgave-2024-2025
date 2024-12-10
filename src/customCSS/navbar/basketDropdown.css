@@ -1,0 +1,6 @@
+.custom-dropdown-menu {
+  top: 30px !important;
+  width: 300px;
+  z-index: 1000;
+  padding: 10px !important;
+}
