@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
+import { useLocalStorage } from "../components/hooks/useLocalStorage";
 
 type BasketProviderProps = {
   children: ReactNode;
@@ -10,10 +11,7 @@ type BasketItem = {
 };
 
 type BasketContext = {
-  openBasket: () => void;
-  closeBasket: () => void;
   addToBasket: (id: number, quantity: number) => void;
-  basketQuantity: number;
   basketItems: BasketItem[];
   removeFromBasket: (id: number) => void;
 };
@@ -25,8 +23,10 @@ export function useBasket() {
 }
 
 export function BasketProvider({ children }: BasketProviderProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [basketItems, setBasketItems] = useState<BasketItem[]>([]);
+  const [basketItems, setBasketItems] = useLocalStorage<BasketItem[]>(
+    "basket",
+    []
+  ); //"basket" is an inital value
 
   const basketQuantity = basketItems.reduce(
     (quantity, item) => item.quantity + quantity,
@@ -48,9 +48,6 @@ export function BasketProvider({ children }: BasketProviderProps) {
     });
   }
 
-  const openBasket = () => setIsOpen(true);
-  const closeBasket = () => setIsOpen(false);
-
   function removeFromBasket(id: number) {
     setBasketItems((currentItems) => {
       return currentItems.filter((item) => item.id !== id);
@@ -62,9 +59,6 @@ export function BasketProvider({ children }: BasketProviderProps) {
       value={{
         addToBasket,
         basketItems,
-        basketQuantity,
-        closeBasket,
-        openBasket,
         removeFromBasket,
       }}
     >
