@@ -1,5 +1,6 @@
 .custom-dropdown-menu {
-  position: absolute;
-  top: 40px;
-  z-index: 1050;
+  top: 30px !important;
+  width: 300px;
+  z-index: 1000;
+  padding: 10px !important;
 }
