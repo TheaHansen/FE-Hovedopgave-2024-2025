@@ -14,6 +14,7 @@ type BasketContext = {
   addToBasket: (id: number, quantity: number) => void;
   basketItems: BasketItem[];
   removeFromBasket: (id: number) => void;
+  basketQuantity: number;
 };
 
 const BasketContext = createContext({} as BasketContext);
@@ -60,6 +61,7 @@ export function BasketProvider({ children }: BasketProviderProps) {
         addToBasket,
         basketItems,
         removeFromBasket,
+        basketQuantity,
       }}
     >
       {children}
