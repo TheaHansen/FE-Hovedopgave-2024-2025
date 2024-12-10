@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "../../customCSS/navbar/icon.css";
 import "../../customCSS/navbar/dropdown.css";
-import SearchField from "../search/searchField";
+import SearchField from "../search/SearchField";
 
 //Made together
 function NavigationBar() {
