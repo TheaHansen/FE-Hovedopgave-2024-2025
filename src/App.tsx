@@ -15,51 +15,47 @@ import { BasketProvider } from "./context/BasketContext";
 //Together
 function App() {
   return (
-    <Router>
-      <BasketProvider>
-        <div>
-          <Topbar />
-          <LogoHeader />
-          <NavigationBar />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <FrontPage
-                  headline="Tilbud"
-                  endpoint="products/incarousel/true"
-                />
-              }
-            />
-            <Route
-              path="/tilbud"
-              element={
-                <ProductOverview
-                  headline="Tilbud"
-                  endpoint="products/tilbud"
-                  breadcrumbItems={["Hjem", "Tilbud"]}
-                />
-              }
-            />
-            <Route
-              path="/product/:id"
-              element={
-                <SingleProduct
-                  endpoint="products"
-                  breadcrumbItems={["Hjem", "Tilbud", "Produkt"]}
-                />
-              }
-            />
-            <Route
-              path="/products"
-              element={
-                <ProductOverview headline="Tilbud" endpoint="products" />
-              }
-            />
-          </Routes>
-        </div>
-      </BasketProvider>
-    </Router>
+    <BasketProvider>
+      <div>
+        <Topbar />
+        <LogoHeader />
+        <NavigationBar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <FrontPage
+                headline="Tilbud"
+                endpoint="products/incarousel/true"
+              />
+            }
+          />
+          <Route
+            path="/tilbud"
+            element={
+              <ProductOverview
+                headline="Tilbud"
+                endpoint="products/tilbud"
+                breadcrumbItems={["Hjem", "Tilbud"]}
+              />
+            }
+          />
+          <Route
+            path="/product/:id"
+            element={
+              <SingleProduct
+                endpoint="products"
+                breadcrumbItems={["Hjem", "Tilbud", "Produkt"]}
+              />
+            }
+          />
+          <Route
+            path="/products"
+            element={<ProductOverview headline="Tilbud" endpoint="products" />}
+          />
+        </Routes>
+      </div>
+    </BasketProvider>
   );
 }
 

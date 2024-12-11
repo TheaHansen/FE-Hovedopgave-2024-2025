@@ -6,6 +6,7 @@ import "../../customCSS/navbar/icon.css";
 import "../../customCSS/navbar/dropdown.css";
 import BasketDropdown from "../basket/BasketDropdown";
 import { useBasket } from "../../context/BasketContext";
+import { Link } from "react-router-dom";
 
 //Made together
 function NavigationBar() {
@@ -35,7 +36,9 @@ function NavigationBar() {
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Dekoration</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href="/tilbud">Tilbud</Nav.Link>
+          <Nav.Link as={Link} to="/tilbud" data-testid="offers-link">
+            Tilbud
+          </Nav.Link>
         </Nav>
         <div className="d-flex gap-4 end-5">
           <svg

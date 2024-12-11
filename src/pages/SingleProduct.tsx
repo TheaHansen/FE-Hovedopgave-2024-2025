@@ -61,7 +61,11 @@ function SingleProduct({ endpoint, breadcrumbItems }: SingleProductProps) {
             <StockStatus stockStatusFromProduct={product.stockStatus} />{" "}
           </h6>
           <div className="d-flex align-items-center mt-4 gap-3">
-            <QuantityPicker quantity={quantity} setQuantity={setQuantity} />
+            <QuantityPicker
+              quantity={quantity}
+              setQuantity={setQuantity}
+              data-testid="quantity-picker"
+            />
             <Button
               style={{ zIndex: 1000 }}
               variant={
