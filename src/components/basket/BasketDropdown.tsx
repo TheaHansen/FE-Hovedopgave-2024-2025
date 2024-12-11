@@ -10,8 +10,8 @@ function BasketDropdown() {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const { basketItems, basketQuantity } = useBasket();
 
-  const handleToggle = () => {
-    setIsExpanded((prev) => !prev);
+  const handleToggle = (isOpen: boolean) => {
+    setIsExpanded(isOpen);
   };
 
   useEffect(() => {
@@ -26,8 +26,12 @@ function BasketDropdown() {
 
   return (
     <div>
-      <div className="basket-dropdown">
-        <button className="icon-btn" onClick={handleToggle}>
+      <Dropdown
+        className="basket-dropdown"
+        show={isExpanded}
+        onToggle={handleToggle}
+      >
+        <button className="icon-btn" onClick={() => setIsExpanded(!isExpanded)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -74,7 +78,7 @@ function BasketDropdown() {
                   />
                 ))
             ) : (
-              <p>Your basket is empty.</p>
+              <div>Du har ingen varer i din kurv.</div>
             )}
             {/* If there are't any item in the basket, it won't show the button. If there are more than 4 items added, it will change the text */}
             {basketItems.length === 0 ? null : basketItems.length > 4 ? (
@@ -88,7 +92,7 @@ function BasketDropdown() {
             )}
           </Dropdown.Menu>
         )}
-      </div>
+      </Dropdown>
     </div>
   );
 }
