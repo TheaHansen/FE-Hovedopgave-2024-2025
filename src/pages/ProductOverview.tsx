@@ -17,9 +17,10 @@ function ProductOverview({
   {
     const [searchParams] = useSearchParams();
     const query = searchParams.get("query");
+    console.log(query);
     const dynamicEndpoint = query
-    ? `products/search?name=${encodeURIComponent(query)}`
-    : endpoint;
+      ? `products/search?name=${encodeURIComponent(query)}`
+      : endpoint;
     return (
       <div className="container mt-4">
         {breadcrumbItems && <CustomBreadcrumb items={breadcrumbItems} />}
@@ -36,7 +37,11 @@ function ProductOverview({
             dropdownLabels={["Tøj", "Tilbud", "Bor", "Dekoration"]}
           />
         </div>
-        <ProductContainer endpoint={dynamicEndpoint} />
+        {query === "notfound" ? (
+          <>Ingen søgeresultater</>
+        ) : (
+          <ProductContainer endpoint={dynamicEndpoint} />
+        )}
       </div>
     );
   }
