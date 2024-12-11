@@ -63,8 +63,6 @@ function SearchField() {
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        console.log("In handleblur");
-        
         const nextFocus = e.relatedTarget as HTMLElement;
         if (nextFocus && nextFocus.classList.contains("search-dropdown-item")) {
             return;
@@ -87,6 +85,7 @@ function SearchField() {
         if (searchQuery.trim()) {
             navigate(`/search-results?query=${encodeURIComponent(searchQuery)}`);
             setSearchQuery("");
+            setIsDropdownVisible(false);
         }
     }
 
