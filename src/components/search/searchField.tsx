@@ -35,12 +35,15 @@ function SearchField() {
                 `products/search?name=${encodeURIComponent(searchQuery)}`
             );
 
+            setSearchResults(data || []);
+            setIsDropdownVisible(true);
+
             if (data) {
                 setSearchResults(data);
                 setIsDropdownVisible(true);
             } else {
                 setSearchResults([]);
-                setIsDropdownVisible(false);
+                setIsDropdownVisible(true);
             }
         } catch (error) {
             console.error("Error fetching search results: ", error);
@@ -135,7 +138,7 @@ function SearchField() {
                             </div>
                         ))
                     ) : (
-                        <div className="search-dropdown-item">No results found</div>
+                        <div className="search-dropdown-item">Ingen produkter fundet</div>
                     )}
                 </div>
             )}
