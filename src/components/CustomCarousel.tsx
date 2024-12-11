@@ -31,7 +31,7 @@ function CustomCarousel({ endpoint }: CustomCarouselProps) {
         {products.map((product) => (
           <Carousel.Item>
             <img
-              src={require(`../images/${product.imageUrl}`)}
+              src={`/images/${product.imageUrl}`}
               className="object-fit-cover"
               width="800"
               height="500"
@@ -41,10 +41,7 @@ function CustomCarousel({ endpoint }: CustomCarouselProps) {
               <h3>{product.title}</h3>
               <p>{product.shortDescription}</p>
               <p>{product.price} DKK</p>
-              <ToPageButton
-                children="Køb her!"
-                to={`/product/${product.id}`}
-              />
+              <ToPageButton children="Køb her!" to={`/product/${product.id}`} />
             </Carousel.Caption>
           </Carousel.Item>
         ))}
