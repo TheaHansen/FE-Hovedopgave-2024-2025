@@ -50,6 +50,12 @@ function App() {
             }
           />
           <Route
+            path="/search-results" 
+            element={<ProductOverview 
+              headline="Søgeresultater:"
+              endpoint="" />}
+            />
+          <Route
             path="/products"
             element={<ProductOverview headline="Tilbud" endpoint="products" />}
           />
