@@ -33,7 +33,7 @@ function BasketItem({ id, quantity }: BasketItemProps) {
   return (
     <div className="d-flex align-items-center mb-3">
       <img
-        src={require(`../../images/${product.imageUrl}`)}
+        src={`/images/${product.imageUrl}`}
         alt={product.title}
         style={{ width: "50px", height: "50px", objectFit: "cover" }}
       />
