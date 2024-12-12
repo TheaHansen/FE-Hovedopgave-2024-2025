@@ -4,8 +4,10 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "../../customCSS/navbar/icon.css";
 import "../../customCSS/navbar/dropdown.css";
+import SearchField from "../search/searchField";
 import BasketDropdown from "../basket/BasketDropdown";
 import { useBasket } from "../../context/BasketContext";
+
 
 //Made together
 function NavigationBar() {
@@ -38,16 +40,7 @@ function NavigationBar() {
           <Nav.Link href="/tilbud">Tilbud</Nav.Link>
         </Nav>
         <div className="d-flex gap-4 end-5">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="bi bi-search"
-            viewBox="0 0 16 16"
-          >
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-          </svg>
+          <SearchField />
           <BasketDropdown />
         </div>
       </Container>
