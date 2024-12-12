@@ -1,8 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ProductContainer from "./components/product/ProductContainer";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { getRequest } from "./services/requests";
+import { Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/topbars/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Topbar from "./components/topbars/Topbar";
@@ -50,11 +48,9 @@ function App() {
             }
           />
           <Route
-            path="/search-results" 
-            element={<ProductOverview 
-              headline="Søgeresultater:"
-              endpoint="" />}
-            />
+            path="/search-results"
+            element={<ProductOverview headline="Søgeresultater:" endpoint="" />}
+          />
           <Route
             path="/products"
             element={<ProductOverview headline="Tilbud" endpoint="products" />}
