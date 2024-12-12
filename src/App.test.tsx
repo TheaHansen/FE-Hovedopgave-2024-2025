@@ -1,12 +1,9 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
-import { MemoryRouter, Route, Router, Routes } from "react-router-dom";
+import { it, expect } from "vitest";
+import { MemoryRouter } from "react-router-dom";
 import { fireEvent } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import App from "./App";
-import ProductOverview from "./pages/ProductOverview";
-import FrontPage from "./pages/FrontPage";
-import NavigationBar from "./components/topbars/navbar";
+
 
 /**
  * @vitest-environment jsdom

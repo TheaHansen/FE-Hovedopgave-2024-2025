@@ -6,7 +6,6 @@ import "../../customCSS/navbar/icon.css";
 import "../../customCSS/navbar/dropdown.css";
 import SearchField from "../search/searchField";
 import BasketDropdown from "../basket/BasketDropdown";
-import { useBasket } from "../../context/BasketContext";
 import { Link } from "react-router-dom";
 
 

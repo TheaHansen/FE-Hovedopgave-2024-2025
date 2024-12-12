@@ -77,7 +77,6 @@ function SearchField() {
   };
 
   const handleResultClick = (id: number) => {
-    console.log("in handleresultclick");
     navigate(`/product/${id}`);
     setSearchQuery("");
     setIsDropdownVisible(false);
