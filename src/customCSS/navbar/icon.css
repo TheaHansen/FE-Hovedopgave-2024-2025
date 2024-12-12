@@ -1,5 +1,13 @@
-.end-5
-{
-    position: absolute;
-    right: 5%;
+.end-5 {
+  position: absolute;
+  right: 5%;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
 }

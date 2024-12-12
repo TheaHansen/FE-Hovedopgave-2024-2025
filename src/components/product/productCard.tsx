@@ -1,6 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "../../customCSS/productCard/shortDescription.css";
+import "../../customCSS/productCard/cardHeight.css";
 import Product from "../product/Product.interfaces";
 import StockStatus from "../stockStatus/StockStatus";
 import { Link } from "react-router-dom";
@@ -16,7 +17,8 @@ function ProductCard({ product }: { product: Product }) {
       <Card className="card text-center" style={{ width: "18rem" }}>
         <Card.Img
           variant="top"
-          src={require(`../../images/${product.imageUrl}`)}
+          src={`/images/${product.imageUrl}`}
+          className="product-image"
         />
         <Card.Body className="card-body-fixed">
           <Card.Title>{product.title}</Card.Title>
@@ -25,7 +27,7 @@ function ProductCard({ product }: { product: Product }) {
           </Card.Text>
           <Card.Text>{product.price} DKK</Card.Text>
           <StockStatus stockStatusFromProduct={product.stockStatus} />
-          <Button variant="dark">Tilføj til kurv</Button>
+          <Button variant="dark">Se mere</Button>
         </Card.Body>
       </Card>
     </Link>
