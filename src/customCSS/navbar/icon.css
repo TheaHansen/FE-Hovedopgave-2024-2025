@@ -11,3 +11,14 @@
   display: flex;
   align-items: center;
 }
+
+.start-5 {
+  position: absolute;
+  left: 5%;
+}
+
+.social-icon a {
+  color: black !important;
+  text-decoration: none;
+
+}
