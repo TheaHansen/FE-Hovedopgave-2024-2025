@@ -2,7 +2,7 @@ import { Container, Nav } from "react-bootstrap";
 
 function Footer() {
     return (
-        <Nav id="kontakt" className="flex-column pb-3 pt-3 border border-secondary-emphasis">
+        <Nav id="kontakt" className="flex-column pb-3 pt-3 border border-secondary-emphasis fixed-bottom">
             <Container className="text-muted">
                 <Nav.Item className="pb-2"> Kontakt oplysninger</Nav.Item>
                 <Nav.Item>Tandlægevej 48</Nav.Item>
