@@ -16,3 +16,9 @@
   position: absolute;
   left: 5%;
 }
+
+.social-icon a {
+  color: black !important;
+  text-decoration: none;
+
+}
