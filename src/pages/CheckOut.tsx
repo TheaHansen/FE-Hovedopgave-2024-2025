@@ -1,11 +1,11 @@
 import { Button, Col, Row } from "react-bootstrap";
-import BasketItem from "../components/basket/BasketItem";
 import CustomForm from "../components/checkOut/CustomForm";
 import PaymentOptions from "../components/checkOut/PaymentOptions";
 import TermsAndConditionsCheckBox from "../components/checkOut/TermsAndConditionsCheckBox";
 import { useBasket } from "../context/BasketContext";
 import "../customCSS/checkOut/forms.css";
 import ShipmentOptions from "../components/checkOut/ShipmentOptions";
+import OrderList from "../components/checkOut/OrderList";
 
 function Checkout() {
   const { basketItems } = useBasket();
@@ -13,28 +13,26 @@ function Checkout() {
     <div className="px-5 py-4">
       <Row>
         <Col>
-          <h2 className="p-3">Faktureringsoplysninger</h2>
-          <div className="checkOutForm">
+          <h2 className="p-3 text-center">Faktureringsoplysninger</h2>
+          <div className="check-out-form">
             <CustomForm />
           </div>
         </Col>
 
         <Col>
-          <h2 className="p-3">Oversigt</h2>
-          <div className="checkOutForm">
-            {basketItems.map((item) => (
-              <BasketItem key={item.id} id={item.id} quantity={item.quantity} />
-            ))}
+          <h2 className="p-3 text-center">Oversigt</h2>
+          <div className="check-out-form">
+            <OrderList />
           </div>
 
-          <h2 className="p-3">Forsendelse</h2>
-          <div className="checkOutForm mb-4">
+          <h2 className="p-3 text-center">Forsendelse</h2>
+          <div className="check-out-form mb-4">
             <ShipmentOptions />
           </div>
-          <div className="checkOutForm mb-4">
+          <div className="check-out-form mb-4">
             <PaymentOptions />
           </div>
-          <div className="checkOutForm mb-4">
+          <div className="check-out-form mb-4">
             <TermsAndConditionsCheckBox />
           </div>
           <Button variant="dark">Gå til betaling</Button>

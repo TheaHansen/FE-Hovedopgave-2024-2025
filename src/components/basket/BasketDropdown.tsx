@@ -75,6 +75,7 @@ function BasketDropdown() {
                     key={item.id}
                     id={item.id}
                     quantity={item.quantity}
+                    isOnCheckOut={false}
                   />
                 ))
             ) : (
