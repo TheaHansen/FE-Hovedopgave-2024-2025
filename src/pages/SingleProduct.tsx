@@ -45,7 +45,7 @@ function SingleProduct({ endpoint, breadcrumbItems }: SingleProductProps) {
       <div className="row g-5">
         <div className="col-md-6 pr-md-5">
           <img
-            src={require(`../images/${product.imageUrl}`)}
+            src={`../images/${product.imageUrl}`}
             alt={product.title}
             className="img-fluid"
           />
@@ -61,7 +61,11 @@ function SingleProduct({ endpoint, breadcrumbItems }: SingleProductProps) {
             <StockStatus stockStatusFromProduct={product.stockStatus} />{" "}
           </h6>
           <div className="d-flex align-items-center mt-4 gap-3">
-            <QuantityPicker quantity={quantity} setQuantity={setQuantity} />
+            <QuantityPicker
+              quantity={quantity}
+              setQuantity={setQuantity}
+              data-testid="quantity-picker"
+            />
             <Button
               style={{ zIndex: 1000 }}
               variant={

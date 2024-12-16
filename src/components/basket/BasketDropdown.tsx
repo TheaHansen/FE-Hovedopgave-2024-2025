@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Badge, Button, Dropdown } from "react-bootstrap";
 import "../../customCSS/navbar/icon.css";
 import "../../customCSS/navbar/basketDropdown.css";
@@ -75,6 +75,7 @@ function BasketDropdown() {
                     key={item.id}
                     id={item.id}
                     quantity={item.quantity}
+                    isOnCheckOut={false}
                   />
                 ))
             ) : (

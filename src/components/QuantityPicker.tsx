@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent } from "react";
 import "../customCSS/quantityPicker.css";
 
 interface QuantityPickerProps {

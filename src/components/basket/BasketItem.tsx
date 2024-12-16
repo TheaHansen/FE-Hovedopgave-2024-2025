@@ -5,6 +5,8 @@ import { getRequest } from "../../services/requests";
 type BasketItemProps = {
   id: number;
   quantity: number;
+  isOnCheckOut: boolean;
+  onPriceUpdate?: (total: number) => void;
 };
 
 type Product = {
@@ -14,7 +16,12 @@ type Product = {
   imageUrl: string;
 };
 
-function BasketItem({ id, quantity }: BasketItemProps) {
+function BasketItem({
+  id,
+  quantity,
+  isOnCheckOut,
+  onPriceUpdate,
+}: BasketItemProps) {
   const { removeFromBasket } = useBasket();
   const [product, setProduct] = useState<Product | null>(null);
 
@@ -26,6 +33,13 @@ function BasketItem({ id, quantity }: BasketItemProps) {
       );
   }, [id]);
 
+  useEffect(() => {
+    if (product) {
+      const itemTotal = quantity * product.price;
+      onPriceUpdate?.(itemTotal);
+    }
+  }, [product?.price, quantity, onPriceUpdate]);
+
   if (!product) {
     return <p>Loading...</p>;
   }
@@ -33,7 +47,7 @@ function BasketItem({ id, quantity }: BasketItemProps) {
   return (
     <div className="d-flex align-items-center mb-3">
       <img
-        src={require(`../../images/${product.imageUrl}`)}
+        src={`/images/${product.imageUrl}`}
         alt={product.title}
         style={{ width: "50px", height: "50px", objectFit: "cover" }}
       />
@@ -46,12 +60,14 @@ function BasketItem({ id, quantity }: BasketItemProps) {
           Total: {(quantity * product.price).toFixed(2)} DKK
         </p>
       </div>
-      <button
-        onClick={() => removeFromBasket(id)}
-        className="btn btn-sm btn-outline-danger ms-auto"
-      >
-        Remove
-      </button>
+      {isOnCheckOut ? null : (
+        <button
+          onClick={() => removeFromBasket(id)}
+          className="btn btn-sm btn-outline-danger ms-auto"
+        >
+          Fjern
+        </button>
+      )}
     </div>
   );
 }
