@@ -52,15 +52,39 @@ function App() {
             />
             <Route
               path="/search-results"
-              element={<ProductOverview headline="Søgeresultater:" endpoint="" />}
+              element={
+                <ProductOverview headline="Søgeresultater:" endpoint="" />
+              }
             />
             <Route
               path="/products"
-              element={<ProductOverview headline="Tilbud" endpoint="products" />}
+              element={
+                <ProductOverview headline="Tilbud" endpoint="products" />
+              }
             />
-             <Route path="/checkOut" element={<CheckOut />} />
+            <Route path="/checkOut" element={<CheckOut />} />
+            <Route
+              path="/amotio"
+              element={
+                <ProductOverview
+                  headline="Amotio"
+                  endpoint="products/amotio"
+                  breadcrumbItems={["Hjem", "Amotio"]}
+                />
+              }
+            />
+            <Route
+              path="/endodonti"
+              element={
+                <ProductOverview
+                  headline="Endodonti"
+                  endpoint="products/endodonti"
+                  breadcrumbItems={["Hjem", "Endodonti"]}
+                />
+              }
+            />
           </Routes>
-          </div>
+        </div>
         <Footer />
       </div>
     </BasketProvider>

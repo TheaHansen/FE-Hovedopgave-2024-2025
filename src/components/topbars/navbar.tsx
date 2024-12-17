@@ -36,8 +36,12 @@ function NavigationBar() {
                     width: "10rem",
                   }}
                 >
-                  <Dropdown.Item href="#action/3.3">Amotio</Dropdown.Item>
-                  <Dropdown.Item href="#action/3.4">Endodonti</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/amotio">
+                    Amotio
+                  </Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/endodonti">
+                    Endodonti
+                  </Dropdown.Item>
                 </Dropdown>
               )}
             </NavDropdown.ItemText>
