@@ -1,4 +1,4 @@
-import { Container, Nav } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import "../customCSS/navbar/icon.css"
 
 function Footer() {
@@ -6,7 +6,7 @@ function Footer() {
         <Nav
             style={{ height: "210px" }} 
             id="kontakt" 
-            className="pb-5 pt-3 border-top border-secondary-emphasis h-210 flex-row position-relative">
+            className="pb-5 pt-3 border-top border-secondary-emphasis h-210 flex-row">
             <div className="flex-column start-5 pb-3 fw-light">
                 <Nav.Item className="pb-2 fs-5"> Kontakt os</Nav.Item>
                 <Nav.Item>Tandlægevej 48</Nav.Item>

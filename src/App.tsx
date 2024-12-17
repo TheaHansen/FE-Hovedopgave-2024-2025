@@ -15,48 +15,50 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <BasketProvider>
-      <div>
-        <Topbar />
-        <LogoHeader />
-        <NavigationBar />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <FrontPage
-                headline="Tilbud"
-                endpoint="products/incarousel/true"
-              />
-            }
-          />
-          <Route
-            path="/tilbud"
-            element={
-              <ProductOverview
-                headline="Tilbud"
-                endpoint="products/tilbud"
-                breadcrumbItems={["Hjem", "Tilbud"]}
-              />
-            }
-          />
-          <Route
-            path="/product/:id"
-            element={
-              <SingleProduct
-                endpoint="products"
-                breadcrumbItems={["Hjem", "Tilbud", "Produkt"]}
-              />
-            }
-          />
-          <Route
-            path="/search-results"
-            element={<ProductOverview headline="Søgeresultater:" endpoint="" />}
-          />
-          <Route
-            path="/products"
-            element={<ProductOverview headline="Tilbud" endpoint="products" />}
-          />
-        </Routes>
+      <div className="App-body">
+        <div className="App-container">
+          <Topbar />
+          <LogoHeader />
+          <NavigationBar />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <FrontPage
+                  headline="Tilbud"
+                  endpoint="products/incarousel/true"
+                />
+              }
+            />
+            <Route
+              path="/tilbud"
+              element={
+                <ProductOverview
+                  headline="Tilbud"
+                  endpoint="products/tilbud"
+                  breadcrumbItems={["Hjem", "Tilbud"]}
+                />
+              }
+            />
+            <Route
+              path="/product/:id"
+              element={
+                <SingleProduct
+                  endpoint="products"
+                  breadcrumbItems={["Hjem", "Tilbud", "Produkt"]}
+                />
+              }
+            />
+            <Route
+              path="/search-results"
+              element={<ProductOverview headline="Søgeresultater:" endpoint="" />}
+            />
+            <Route
+              path="/products"
+              element={<ProductOverview headline="Tilbud" endpoint="products" />}
+            />
+          </Routes>
+          </div>
         <Footer />
       </div>
     </BasketProvider>
