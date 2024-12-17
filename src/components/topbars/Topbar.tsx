@@ -2,8 +2,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-//bg="dark" data-bs-theme="dark" på navbar før istedet for classname
-
 //Made by Frederikke
 function Topbar() {
   return (

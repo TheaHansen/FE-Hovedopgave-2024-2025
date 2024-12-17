@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Badge, Button, Dropdown } from "react-bootstrap";
 import "../../customCSS/navbar/icon.css";
 import "../../customCSS/navbar/basketDropdown.css";
 import { useBasket } from "../../context/BasketContext";
 import BasketItem from "./BasketItem";
+import { Link } from "react-router-dom";
 
 function BasketDropdown() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -75,6 +76,7 @@ function BasketDropdown() {
                     key={item.id}
                     id={item.id}
                     quantity={item.quantity}
+                    isOnCheckOut={false}
                   />
                 ))
             ) : (
@@ -82,13 +84,25 @@ function BasketDropdown() {
             )}
             {/* If there are't any item in the basket, it won't show the button. If there are more than 4 items added, it will change the text */}
             {basketItems.length === 0 ? null : basketItems.length > 4 ? (
-              <Button variant="dark" className="w-100">
-                Se resten af kurven
-              </Button>
+              <Link to="/checkout" className="w-100">
+                <Button
+                  variant="dark"
+                  className="w-100"
+                  onClick={() => setIsExpanded(false)}
+                >
+                  Se resten af kurven
+                </Button>
+              </Link>
             ) : (
-              <Button variant="dark" className="w-100">
-                Gå til kurv
-              </Button>
+              <Link to="/checkout" className="w-100">
+                <Button
+                  variant="dark"
+                  className="w-100"
+                  onClick={() => setIsExpanded(false)}
+                >
+                  Gå til kurv
+                </Button>
+              </Link>
             )}
           </Dropdown.Menu>
         )}

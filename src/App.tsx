@@ -1,8 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ProductContainer from "./components/product/ProductContainer";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { getRequest } from "./services/requests";
+import { Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/topbars/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Topbar from "./components/topbars/Topbar";
@@ -11,13 +9,15 @@ import ProductOverview from "./pages/ProductOverview";
 import SingleProduct from "./pages/SingleProduct";
 import FrontPage from "./pages/FrontPage";
 import { BasketProvider } from "./context/BasketContext";
+import Footer from "./components/Footer";
+import CheckOut from "./pages/CheckOut";
 
 //Together
 function App() {
   return (
-    <Router>
-      <BasketProvider>
-        <div>
+    <BasketProvider>
+      <div className="App-body">
+        <div className="App-container">
           <Topbar />
           <LogoHeader />
           <NavigationBar />
@@ -51,15 +51,19 @@ function App() {
               }
             />
             <Route
-              path="/products"
-              element={
-                <ProductOverview headline="Tilbud" endpoint="products" />
-              }
+              path="/search-results"
+              element={<ProductOverview headline="Søgeresultater:" endpoint="" />}
             />
+            <Route
+              path="/products"
+              element={<ProductOverview headline="Tilbud" endpoint="products" />}
+            />
+             <Route path="/checkOut" element={<CheckOut />} />
           </Routes>
-        </div>
-      </BasketProvider>
-    </Router>
+          </div>
+        <Footer />
+      </div>
+    </BasketProvider>
   );
 }
 
