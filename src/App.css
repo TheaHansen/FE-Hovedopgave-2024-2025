@@ -41,3 +41,13 @@ h2 {
     transform: rotate(360deg);
   }
 }
+
+.App-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-container {
+  flex-grow: 1;
+}
