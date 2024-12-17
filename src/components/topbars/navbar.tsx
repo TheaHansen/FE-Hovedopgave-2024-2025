@@ -36,12 +36,16 @@ function NavigationBar() {
                     width: "10rem",
                   }}
                 >
-                  <Dropdown.Item href="#action/3.3">Amotio</Dropdown.Item>
-                  <Dropdown.Item href="#action/3.4">Endodonti</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/amotio">
+                    Amotio
+                  </Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/endodonti">
+                    Endodonti
+                  </Dropdown.Item>
                 </Dropdown>
               )}
             </NavDropdown.ItemText>
-            <NavDropdown.Item href="#action/3.2">Instrumenter</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/instrumenter">Instrumenter</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Til tandplejeren" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Rens</NavDropdown.Item>
