@@ -60,9 +60,7 @@ function App() {
           <Route path="/checkOut" element={<CheckOut />} />
           <Route
             path="/about-us"
-            element={
-              <AboutUs/>
-            }
+            element={<AboutUs breadcrumbItems={["Hjem", "Om os"]} />}
           />
         </Routes>
       </div>
