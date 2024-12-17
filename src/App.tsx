@@ -61,7 +61,7 @@ function App() {
             />
             <Route path="/checkOut" element={<CheckOut />} />
             
-            <Route path="/FAQ" element={<FAQ />} />
+            <Route path="/FAQ" element={<FAQ breadcrumbItems={["Hjem", "FAQ"]}/>} />
           </Routes>
           </div>
         <Footer />
