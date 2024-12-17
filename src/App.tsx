@@ -9,6 +9,7 @@ import ProductOverview from "./pages/ProductOverview";
 import SingleProduct from "./pages/SingleProduct";
 import FrontPage from "./pages/FrontPage";
 import { BasketProvider } from "./context/BasketContext";
+import CheckOut from "./pages/CheckOut";
 
 //Together
 function App() {
@@ -55,6 +56,7 @@ function App() {
             path="/products"
             element={<ProductOverview headline="Tilbud" endpoint="products" />}
           />
+          <Route path="/checkOut" element={<CheckOut />} />
         </Routes>
       </div>
     </BasketProvider>
