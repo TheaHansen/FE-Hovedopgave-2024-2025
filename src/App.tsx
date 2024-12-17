@@ -83,6 +83,16 @@ function App() {
                 />
               }
             />
+            <Route
+              path="/instrumenter"
+              element={
+                <ProductOverview
+                  headline="Instrumenter"
+                  endpoint="products/instrumenter"
+                  breadcrumbItems={["Hjem", "Instrumenter"]}
+                />
+              }
+            />
           </Routes>
         </div>
         <Footer />

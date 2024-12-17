@@ -45,7 +45,7 @@ function NavigationBar() {
                 </Dropdown>
               )}
             </NavDropdown.ItemText>
-            <NavDropdown.Item href="#action/3.2">Instrumenter</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/instrumenter">Instrumenter</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Til tandplejeren" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Rens</NavDropdown.Item>
