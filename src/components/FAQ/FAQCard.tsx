@@ -14,9 +14,7 @@ function FAQCard({ headline, children }: FAQCardProps) {
         className="mx-auto my-5">
       <Card.Header as="h5">{headline}</Card.Header>
       <Card.Body>
-        <Card.Text>
             {children}
-        </Card.Text>
       </Card.Body>
     </Card>
   );

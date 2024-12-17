@@ -1,4 +1,5 @@
 import Accordion from 'react-bootstrap/Accordion';
+import "../../customCSS/faq.css"
 
 interface FAQAccordionProps {
     question: string;
