@@ -11,6 +11,7 @@ import FrontPage from "./pages/FrontPage";
 import { BasketProvider } from "./context/BasketContext";
 import Footer from "./components/Footer";
 import CheckOut from "./pages/CheckOut";
+import AboutUs from "./pages/AboutUs";
 
 //Together
 function App() {
@@ -59,6 +60,10 @@ function App() {
               element={<ProductOverview headline="Tilbud" endpoint="products" />}
             />
              <Route path="/checkOut" element={<CheckOut />} />
+             <Route
+               path="/about-us"
+               element={<AboutUs breadcrumbItems={["Hjem", "Om os"]} />}
+              />
           </Routes>
           </div>
         <Footer />
