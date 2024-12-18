@@ -11,6 +11,7 @@ import FrontPage from "./pages/FrontPage";
 import { BasketProvider } from "./context/BasketContext";
 import Footer from "./components/Footer";
 import CheckOut from "./pages/CheckOut";
+import FAQ from "./pages/FAQ";
 import AboutUs from "./pages/AboutUs";
 
 //Together
@@ -94,7 +95,8 @@ function App() {
                 />
               }
             />
-             <Route path="/checkOut" element={<CheckOut />} />
+            <Route path="/checkOut" element={<CheckOut />} />
+            <Route path="/FAQ" element={<FAQ breadcrumbItems={["Hjem", "FAQ"]}/>} />
              <Route
                path="/about-us"
                element={<AboutUs breadcrumbItems={["Hjem", "Om os"]} />}
