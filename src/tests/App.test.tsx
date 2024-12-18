@@ -2,8 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { it, expect } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import { fireEvent } from "@testing-library/react";
-import App from "./App";
-
+import App from "../App";
 
 /**
  * @vitest-environment jsdom

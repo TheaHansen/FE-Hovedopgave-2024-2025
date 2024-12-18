@@ -28,7 +28,10 @@ function StockStatus({
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center p-2">
+    <div
+      className="d-flex justify-content-center align-items-center p-2"
+      data-testid="product-card-stock-status"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="10"
