@@ -1,13 +1,29 @@
-import { describe, it, expect, vi, afterEach } from "vitest";
-import { getRequest } from "../../services/requests";
+import { describe, it, expect, afterEach, vi } from "vitest";
+import { getRequest, apiUrl } from "../../services/requests";
+import mockProducts from "../mockData/product.mock";
 
-describe("getRequest", async () => {
-  const mockFn = vi.fn().mockImplementation(await getRequest("products"));
-  afterEach(() => {
-    vi.clearAllMocks(); // Reset mocks after each test
+afterEach(() => {
+  vi.clearAllMocks();
+  delete (global as any).importMeta;
+});
+
+it("should return data when fetch is successful", async () => {
+  global.fetch = vi.fn().mockResolvedValueOnce({
+    json: vi.fn().mockResolvedValueOnce(mockProducts),
   });
 
-  it("should return data when fetch is successful", async () => {
-    console.log(mockFn.getMockImplementation);
+  const data = await getRequest("products");
+  expect(fetch).toHaveBeenCalledWith(`${apiUrl}products`);
+  expect(data).toEqual(mockProducts);
+});
+
+it("should return null with wrong endpoint", async () => {
+  global.fetch = vi.fn().mockResolvedValueOnce({
+    ok: false,
+    status: 404,
+    statusText: "Not Found",
   });
+  const data = await getRequest("wrongendpoint");
+  expect(fetch).toHaveBeenCalledWith(`${apiUrl}wrongendpoint`);
+  expect(data).toEqual(null);
 });
