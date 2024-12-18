@@ -12,6 +12,7 @@ import { BasketProvider } from "./context/BasketContext";
 import Footer from "./components/Footer";
 import CheckOut from "./pages/CheckOut";
 import FAQ from "./pages/FAQ";
+import AboutUs from "./pages/AboutUs";
 
 //Together
 function App() {
@@ -53,17 +54,55 @@ function App() {
             />
             <Route
               path="/search-results"
-              element={<ProductOverview headline="Søgeresultater:" endpoint="" />}
+              element={
+                <ProductOverview headline="Søgeresultater:" endpoint="" />
+              }
             />
             <Route
               path="/products"
-              element={<ProductOverview headline="Tilbud" endpoint="products" />}
+              element={
+                <ProductOverview headline="Tilbud" endpoint="products" />
+              }
             />
             <Route path="/checkOut" element={<CheckOut />} />
-            
+            <Route
+              path="/amotio"
+              element={
+                <ProductOverview
+                  headline="Amotio"
+                  endpoint="products/amotio"
+                  breadcrumbItems={["Hjem", "Amotio"]}
+                />
+              }
+            />
+            <Route
+              path="/endodonti"
+              element={
+                <ProductOverview
+                  headline="Endodonti"
+                  endpoint="products/endodonti"
+                  breadcrumbItems={["Hjem", "Endodonti"]}
+                />
+              }
+            />
+            <Route
+              path="/instrumenter"
+              element={
+                <ProductOverview
+                  headline="Instrumenter"
+                  endpoint="products/instrumenter"
+                  breadcrumbItems={["Hjem", "Instrumenter"]}
+                />
+              }
+            />
+            <Route path="/checkOut" element={<CheckOut />} />
             <Route path="/FAQ" element={<FAQ breadcrumbItems={["Hjem", "FAQ"]}/>} />
+             <Route
+               path="/about-us"
+               element={<AboutUs breadcrumbItems={["Hjem", "Om os"]} />}
+              />
           </Routes>
-          </div>
+        </div>
         <Footer />
       </div>
     </BasketProvider>
