@@ -73,6 +73,7 @@ function SingleProduct({ endpoint, breadcrumbItems }: SingleProductProps) {
               }
               onClick={() => addToBasket(product.id, quantity)}
               disabled={product.stockStatus === "OutOfStock"}
+              data-testid="single-product-button"
             >
               Tilføj til kurv
             </Button>
