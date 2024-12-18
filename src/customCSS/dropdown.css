@@ -16,3 +16,15 @@
   color: rgb(47, 47, 47);
   background-color: rgb(226, 226, 226);
 }
+
+.dropdown-menu a,
+.dropdown-item-text {
+  background-color: white !important;
+  color: black !important;
+  cursor: pointer;
+}
+
+.dropdown-menu a:hover,
+.dropdown-item-text:hover {
+  background-color: #f8f9fa !important;
+}
