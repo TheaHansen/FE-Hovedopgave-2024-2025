@@ -1,16 +1,17 @@
 import { useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { getRequest } from "../services/requests";
-import CustomBreadcrumb from "../components/Breadcrumb";
+import CustomBreadcrumb from "../components/breadcrumb/Breadcrumb";
 import Product from "../components/product/Product.interfaces";
 import { useEffect, useState } from "react";
 import StockStatus from "../components/stockStatus/StockStatus";
 import QuantityPicker from "../components/QuantityPicker";
 import { useBasket } from "../context/BasketContext";
+import CustomBreadcrumbItem from "../components/breadcrumb/Breadcrumb.interfaces";
 
 interface SingleProductProps {
   endpoint: string;
-  breadcrumbItems: string[];
+  breadcrumbItems: CustomBreadcrumbItem[];
 }
 
 function SingleProduct({ endpoint, breadcrumbItems }: SingleProductProps) {

@@ -1,7 +1,8 @@
-import CustomBreadcrumb from "../components/Breadcrumb";
+import CustomBreadcrumb from "../components/breadcrumb/Breadcrumb";
+import CustomBreadcrumbItem from "../components/breadcrumb/Breadcrumb.interfaces";
 
 interface AboutUsProps {
-  breadcrumbItems: string[];
+  breadcrumbItems: CustomBreadcrumbItem[];
 }
 
 function AboutUs({ breadcrumbItems }: AboutUsProps) {

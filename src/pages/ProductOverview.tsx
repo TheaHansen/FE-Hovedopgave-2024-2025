@@ -1,12 +1,13 @@
 import ProductContainer from "../components/product/ProductContainer";
-import CustomBreadcrumb from "../components/Breadcrumb";
+import CustomBreadcrumb from "../components/breadcrumb/Breadcrumb";
 import FilterDropdown from "../components/Dropdown";
 import { useSearchParams } from "react-router-dom";
+import CustomBreadcrumbItem from "../components/breadcrumb/Breadcrumb.interfaces";
 
 interface ProductOverviewProps {
   headline: string;
   endpoint: string;
-  breadcrumbItems?: string[];
+  breadcrumbItems?: CustomBreadcrumbItem[];
 }
 
 function ProductOverview({

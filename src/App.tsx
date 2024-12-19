@@ -40,7 +40,10 @@ function App() {
                 <ProductOverview
                   headline="Tilbud"
                   endpoint="products/tilbud"
-                  breadcrumbItems={["Hjem", "Tilbud"]}
+                  breadcrumbItems={[
+                    { label: "Hjem", path: "/" },
+                    { label: "Tilbud" }
+                  ]}
                 />
               }
             />
@@ -49,7 +52,11 @@ function App() {
               element={
                 <SingleProduct
                   endpoint="products"
-                  breadcrumbItems={["Hjem", "Tilbud", "Produkt"]}
+                  breadcrumbItems={[
+                    { label: "Hjem", path: "/" },
+                    { label: "Alle produkter", path: "/alle-produkter" },
+                    { label: "Produkt" } 
+                  ]}
                 />
               }
             />
@@ -60,19 +67,25 @@ function App() {
               }
             />
             <Route
-              path="/products"
+              path="/alle-produkter"
               element={
-                <ProductOverview headline="Tilbud" endpoint="products" />
+                <ProductOverview headline="Alle produkter" endpoint="products" />
               }
             />
+
             <Route path="/checkOut" element={<CheckOut />} />
+            
             <Route
               path="/amotio"
               element={
                 <ProductOverview
                   headline="Amotio"
                   endpoint="products/amotio"
-                  breadcrumbItems={["Hjem", "Amotio"]}
+                  breadcrumbItems={[
+                    { label: "Hjem", path: "/" },
+                    { label: "Instrumenter", path: "/instrumenter"},
+                    { label: "Amotio" }
+                  ]}
                 />
               }
             />
@@ -82,7 +95,10 @@ function App() {
                 <ProductOverview
                   headline="Endodonti"
                   endpoint="products/endodonti"
-                  breadcrumbItems={["Hjem", "Endodonti"]}
+                  breadcrumbItems={[
+                    {label: "Hjem", path: "/"},
+                    {label: "Instumenter", path: "/instrumenter"},
+                    {label: "Endodonti"}]}
                 />
               }
             />
@@ -92,19 +108,26 @@ function App() {
                 <ProductOverview
                   headline="Instrumenter"
                   endpoint="products/instrumenter"
-                  breadcrumbItems={["Hjem", "Instrumenter"]}
+                  breadcrumbItems={[
+                    {label: "Hjem", path: "/"}, 
+                    {label: "Instrumenter"}]}
                 />
               }
             />
-            <Route path="/checkOut" element={<CheckOut />} />
-            <Route
-              path="/FAQ"
-              element={<FAQ breadcrumbItems={["Hjem", "FAQ"]} />}
-            />
-            <Route
-              path="/about-us"
-              element={<AboutUs breadcrumbItems={["Hjem", "Om os"]} />}
-            />
+
+            <Route 
+              path="/FAQ" 
+              element={<FAQ breadcrumbItems={[
+                {label: "Hjem", path: "/"},
+                {label: "FAQ"}]}/>} />
+             
+             <Route
+               path="/om-os"
+               element={<AboutUs breadcrumbItems={[
+                {label: "Hjem", path: "/"},
+                {label: "Om os"}]} />}
+              />
+
           </Routes>
         </div>
         <ScrollspyTop />
