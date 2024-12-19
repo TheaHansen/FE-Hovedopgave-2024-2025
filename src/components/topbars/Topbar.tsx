@@ -11,7 +11,7 @@ function Topbar() {
       <Container>
           <Nav className="d-flex mx-auto justify-content-between w-50">
             <Nav.Link as={Link} to="/FAQ" className="text-light">FAQ</Nav.Link>
-            <Nav.Link as={Link} to="/about-us" className="text-light">
+            <Nav.Link as={Link} to="/om-os" className="text-light">
             Om os
             </Nav.Link>
             <Nav.Link href="#kontakt" className="text-light">Kontakt</Nav.Link>
