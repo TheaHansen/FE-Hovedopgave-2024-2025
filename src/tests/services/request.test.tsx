@@ -18,6 +18,7 @@ it("should return data when fetch is successful", async () => {
 });
 
 it("should return null with wrong endpoint", async () => {
+  //global.fetch = vi.fn().mockRejectedValueOnce(new Error("Failed to fetch"));
   global.fetch = vi.fn().mockResolvedValueOnce({
     ok: false,
     status: 404,
