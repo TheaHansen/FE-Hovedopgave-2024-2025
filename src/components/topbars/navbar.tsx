@@ -9,6 +9,7 @@ import BasketDropdown from "../basket/BasketDropdown";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Dropdown } from "react-bootstrap";
+import LogoButton from "./LogoButton";
 
 //Made together
 function NavigationBar() {
@@ -19,6 +20,9 @@ function NavigationBar() {
       className="d-flex position-relative h-60 border border-secondary"
     >
       <Container>
+        <div className="start-5">
+          <LogoButton />
+        </div>
         <Nav className="ml-auto position-absolute start-50 translate-middle-x custom-z-index">
           <NavDropdown title="Til tandlægen" id="basic-nav-dropdown">
             <NavDropdown.ItemText
@@ -45,7 +49,9 @@ function NavigationBar() {
                 </Dropdown>
               )}
             </NavDropdown.ItemText>
-            <NavDropdown.Item as={Link} to="/instrumenter">Instrumenter</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/instrumenter">
+              Instrumenter
+            </NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Til tandplejeren" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Rens</NavDropdown.Item>
