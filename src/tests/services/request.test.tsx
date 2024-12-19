@@ -1,4 +1,4 @@
-import { describe, it, expect, afterEach, vi } from "vitest";
+import { it, expect, afterEach, vi } from "vitest";
 import { getRequest, apiUrl } from "../../services/requests";
 import mockProducts from "../mockData/product.mock";
 
