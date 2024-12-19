@@ -4,7 +4,6 @@ import mockProducts from "../mockData/product.mock";
 
 afterEach(() => {
   vi.clearAllMocks();
-  delete (global as any).importMeta;
 });
 
 it("should return data when fetch is successful", async () => {
@@ -18,7 +17,6 @@ it("should return data when fetch is successful", async () => {
 });
 
 it("should return null with wrong endpoint", async () => {
-  //global.fetch = vi.fn().mockRejectedValueOnce(new Error("Failed to fetch"));
   global.fetch = vi.fn().mockResolvedValueOnce({
     ok: false,
     status: 404,
@@ -27,4 +25,10 @@ it("should return null with wrong endpoint", async () => {
   const data = await getRequest("wrongendpoint");
   expect(fetch).toHaveBeenCalledWith(`${apiUrl}wrongendpoint`);
   expect(data).toEqual(null);
+
+  const fetchCall = (fetch as any).mock.results[0].value;
+  await fetchCall.then((response: Response) => {
+    expect(response.status).toBe(404);
+    expect(response.statusText).toBe("Not Found");
+  });
 });
