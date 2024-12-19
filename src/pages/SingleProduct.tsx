@@ -52,10 +52,10 @@ function SingleProduct({ endpoint, breadcrumbItems }: SingleProductProps) {
         </div>
         <div className="col-md-6">
           <CustomBreadcrumb items={breadcrumbItems} />
-          <h1>{product.title}</h1>
-          <h6 className="mb-2 text-muted small">{product.shortDescription}</h6>
-          <h6 className="small mb-4">{product.description}</h6>
-          <h6>{product.price.toFixed(2)} DKK</h6>
+          <h1 data-testid="single-product-title">{product.title}</h1>
+          <h6 className="mb-2 text-muted small" data-testid="single-product-short-description">{product.shortDescription}</h6>
+          <h6 className="small mb-4" data-testid="single-product-description">{product.description}</h6>
+          <h6 data-testid="single-product-price">{product.price.toFixed(2)} DKK</h6>
           <h6 className="d-flex align-items-center mt-2 small">
             Lagerstatus:{" "}
             <StockStatus stockStatusFromProduct={product.stockStatus} />{" "}
@@ -73,6 +73,7 @@ function SingleProduct({ endpoint, breadcrumbItems }: SingleProductProps) {
               }
               onClick={() => addToBasket(product.id, quantity)}
               disabled={product.stockStatus === "OutOfStock"}
+              data-testid="single-product-button"
             >
               Tilføj til kurv
             </Button>

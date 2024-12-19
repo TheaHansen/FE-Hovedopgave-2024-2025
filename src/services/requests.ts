@@ -16,4 +16,4 @@ async function getRequest(endpoint: string): Promise<any> {
   }
 }
 
-export { getRequest };
+export { getRequest, apiUrl };

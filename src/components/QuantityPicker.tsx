@@ -38,7 +38,7 @@ function QuantityPicker({ quantity, setQuantity }: QuantityPickerProps) {
   };
 
   return (
-    <div className="quantity-picker gap-2">
+    <div className="quantity-picker gap-2" data-testid="quantity-picker">
       <button onClick={decrement} className="quantity-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
