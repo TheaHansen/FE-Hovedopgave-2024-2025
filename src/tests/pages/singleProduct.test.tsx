@@ -5,7 +5,6 @@ import mockProducts from "../mockData/product.mock";
 import SingleProduct from "../../pages/SingleProduct";
 import * as requests from "../../services/requests";
 import App from "../../App";
-import ProductOverview from "../../pages/ProductOverview";
 import Product from "../../components/product/Product.interfaces";
 
 /**
@@ -13,10 +12,19 @@ import Product from "../../components/product/Product.interfaces";
  */
 
 const mockData: Product[] = mockProducts;
-//vi.spyOn(requests, "getRequest").mockResolvedValue(mockData);
+
+vi.spyOn(requests, "getRequest").mockImplementation((endpoint: string) => {
+  if (endpoint === "products") {
+    return Promise.resolve(mockData);
+  }
+  if (endpoint.startsWith("products/")) {
+    const id = parseInt(endpoint.split("/")[1], 10);
+    return Promise.resolve(mockData.find((p) => p.id === id));
+  }
+  return Promise.reject(new Error("Endpoint not found"));
+});
 
   it("Render single product page with mock data", async () => {
-    vi.spyOn(requests, "getRequest").mockResolvedValue(mockData[0]);
     render(
     <MemoryRouter initialEntries={[`/product/${mockData[0].id}`]}>
         <Routes>
@@ -68,22 +76,9 @@ const mockData: Product[] = mockProducts;
 });
 
 it("navigates to single product from all product", async () => {
-  vi.spyOn(requests, "getRequest").mockResolvedValue(mockData);  
   render(
       <MemoryRouter initialEntries={["/products"]}>
-        <Routes>
-          <Route
-            path="/products"
-            element={<ProductOverview headline="Tilbud" endpoint="products" />}
-          />
-          <Route
-            path="/products/:id"
-            element={<SingleProduct
-                endpoint="products"
-                breadcrumbItems={["Hjem", "Tilbud", "Produkt"]}
-              />} 
-          />
-        </Routes>
+        <App />
       </MemoryRouter>
     );
 
@@ -92,12 +87,14 @@ it("navigates to single product from all product", async () => {
       expect(productOverviewHeader).toBeInTheDocument();
     });
   
-    const product1 = await screen.getByText("Tandbørste");
+    const product1 = await screen.getAllByTestId("product-card-button")[0];
     expect(product1).toBeInTheDocument();
   
     fireEvent.click(product1);
     
     await waitFor(() => {
-      expect(window.location.pathname).toBe("/product/1");
+      const singleProductTitle = screen.getByTestId("single-product-title");
+      expect(singleProductTitle).toBeVisible();
+      expect(singleProductTitle).toHaveTextContent(mockData[0].title);
     });
 });
