@@ -13,10 +13,11 @@ import Product from "../../components/product/Product.interfaces";
  */
 
 const mockData: Product[] = mockProducts;
-vi.spyOn(requests, "getRequest").mockResolvedValue(mockData[0]);
+//vi.spyOn(requests, "getRequest").mockResolvedValue(mockData);
 
   it("Render single product page with mock data", async () => {
-  render(
+    vi.spyOn(requests, "getRequest").mockResolvedValue(mockData[0]);
+    render(
     <MemoryRouter initialEntries={[`/product/${mockData[0].id}`]}>
         <Routes>
             <Route
@@ -67,7 +68,8 @@ vi.spyOn(requests, "getRequest").mockResolvedValue(mockData[0]);
 });
 
 it("navigates to single product from all product", async () => {
-    render(
+  vi.spyOn(requests, "getRequest").mockResolvedValue(mockData);  
+  render(
       <MemoryRouter initialEntries={["/products"]}>
         <Routes>
           <Route
@@ -85,23 +87,17 @@ it("navigates to single product from all product", async () => {
       </MemoryRouter>
     );
 
-    console.log(mockData)
+    await waitFor(() => {
+      const productOverviewHeader = screen.getByTestId("headline");
+      expect(productOverviewHeader).toBeInTheDocument();
+    });
   
-    // // Wait for the product overview to load
-    // await waitFor(() => {
-    //   const productOverviewHeader = screen.getByTestId("headline");
-    //   expect(productOverviewHeader).toBeInTheDocument();
-    // });
+    const product1 = await screen.getByText("Tandbørste");
+    expect(product1).toBeInTheDocument();
   
-    // // Check if products are rendered
-    // const product1 = await screen.findByText("Tandbørste");
-    // expect(product1).toBeInTheDocument();
-  
-    // // Simulate clicking on the product card
-    // fireEvent.click(product1);
-  
-    // // Check if the URL changes to the single product page
-    // await waitFor(() => {
-    //   expect(window.location.pathname).toBe("/products/1"); // Assumes the product ID is 1
-    // });
-  });
+    fireEvent.click(product1);
+    
+    await waitFor(() => {
+      expect(window.location.pathname).toBe("/product/1");
+    });
+});
