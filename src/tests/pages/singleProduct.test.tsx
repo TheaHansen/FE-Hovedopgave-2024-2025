@@ -33,7 +33,11 @@ vi.spyOn(requests, "getRequest").mockImplementation((endpoint: string) => {
                 element={
                     <SingleProduct
                     endpoint="products"
-                    breadcrumbItems={["Hjem", "Tilbud", "Produkt"]}
+                    breadcrumbItems={[
+                      { label:"Hjem", path: "/"},
+                      { label: "Alle produkter", path: "alle-produkter"},
+                      { label: "Produkt"}
+                    ]}
                     />
                 }
             />
@@ -77,7 +81,7 @@ vi.spyOn(requests, "getRequest").mockImplementation((endpoint: string) => {
 
 it("navigates to single product from all product", async () => {
   render(
-      <MemoryRouter initialEntries={["/products"]}>
+      <MemoryRouter initialEntries={["/alle-produkter"]}>
         <App />
       </MemoryRouter>
     );
