@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import CheckOut from "./pages/CheckOut";
 import FAQ from "./pages/FAQ";
 import AboutUs from "./pages/AboutUs";
+import ScrollspyTop from "./components/ScrollspyTop";
 
 //Together
 function App() {
@@ -126,8 +127,10 @@ function App() {
                 {label: "Hjem", path: "/"},
                 {label: "Om os"}]} />}
               />
+
           </Routes>
         </div>
+        <ScrollspyTop />
         <Footer />
       </div>
     </BasketProvider>
