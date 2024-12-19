@@ -20,5 +20,9 @@
 .social-icon a {
   color: black !important;
   text-decoration: none;
+}
 
+.bottom-10 {
+  position: absolute;
+  bottom: 10%;
 }
