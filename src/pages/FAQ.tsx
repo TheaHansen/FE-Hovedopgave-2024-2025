@@ -1,10 +1,11 @@
-import CustomBreadcrumb from "../components/Breadcrumb";
+import CustomBreadcrumb from "../components/breadcrumb/Breadcrumb";
 import FAQAccordion from "../components/FAQ/FAQAccordian";
 import FAQCard from "../components/FAQ/FAQCard";
 import faqData from "../components/FAQ/faq.json";
+import CustomBreadcrumbItem from "../components/breadcrumb/Breadcrumb.interfaces";
 
 interface FAQProps {
-    breadcrumbItems: string[];
+    breadcrumbItems: CustomBreadcrumbItem[];
 }
 function FAQ({ breadcrumbItems }: FAQProps) {
     return (
