@@ -14,6 +14,7 @@ import { Dropdown } from "react-bootstrap";
 function NavigationBar() {
   const [showRightDropdown, setShowRightDropdown] = useState(false);
   return (
+    <div className="position-sticky top-0 custom-z-index bg-white">
     <Navbar
       style={{ height: "60px" }}
       className="d-flex position-relative h-60 border border-secondary"
@@ -67,6 +68,7 @@ function NavigationBar() {
         </div>
       </Container>
     </Navbar>
+    </div>
   );
 }
 
