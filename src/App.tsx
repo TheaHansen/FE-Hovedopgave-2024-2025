@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import CheckOut from "./pages/CheckOut";
 import FAQ from "./pages/FAQ";
 import AboutUs from "./pages/AboutUs";
+import ScrollspyTop from "./components/ScrollspyTop";
 
 //Together
 function App() {
@@ -96,13 +97,17 @@ function App() {
               }
             />
             <Route path="/checkOut" element={<CheckOut />} />
-            <Route path="/FAQ" element={<FAQ breadcrumbItems={["Hjem", "FAQ"]}/>} />
-             <Route
-               path="/about-us"
-               element={<AboutUs breadcrumbItems={["Hjem", "Om os"]} />}
-              />
+            <Route
+              path="/FAQ"
+              element={<FAQ breadcrumbItems={["Hjem", "FAQ"]} />}
+            />
+            <Route
+              path="/about-us"
+              element={<AboutUs breadcrumbItems={["Hjem", "Om os"]} />}
+            />
           </Routes>
         </div>
+        <ScrollspyTop />
         <Footer />
       </div>
     </BasketProvider>
