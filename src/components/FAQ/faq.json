@@ -1,0 +1,51 @@
+{
+    "general": [
+      {
+        "question": "Hvilke produkter tilbyder I på webshoppen?",
+        "answer": "Vi tilbyder et bredt udvalg af tandlægeudstyr, herunder bor, instrumenter, handsker og forbrugsartikler."
+      },
+      {
+        "question": "Hvordan kontakter jeg kundeservice?",
+        "answer": "Du kan kontakte os via e-mail på support@webshop.dk eller ringe til os på +45 12 34 56 78."
+      },
+      {
+        "question": "Hvor lang er leveringstiden?",
+        "answer": "Leveringstiden er typisk 1-3 hverdage, afhængigt af lagerstatus og leveringsdestination."
+      }
+    ],
+    "orders": [
+      {
+        "question": "Hvordan sporer jeg min ordre?",
+        "answer": "Når din ordre er afsendt, modtager du en e-mail med et sporingslink."
+      },
+      {
+        "question": "Hvad er jeres returpolitik?",
+        "answer": "Du har 14 dages returret på alle varer, forudsat at de er ubrugte og i original emballage."
+      },
+      {
+        "question": "Hvilke betalingsmetoder accepterer I?",
+        "answer": "Vi accepterer Visa, Mastercard, MobilePay og bankoverførsel."
+      }
+    ],
+    "payment": [
+      {
+        "question": "Hvordan betaler jeg?",
+        "answer": "Vi tilbyder flere betalingsmetoder, herunder kortbetaling, MobilePay og bankoverførsel."
+      },
+      {
+        "question": "Er der nogen ekstra gebyrer ved betaling?",
+        "answer": "Der er ingen ekstra gebyrer forbundet med betalinger på webshoppen."
+      }
+    ],
+    "returns": [
+      {
+        "question": "Hvordan returnerer jeg en vare?",
+        "answer": "For at returnere en vare skal du kontakte vores kundeservice og følge vores returprocedure."
+      },
+      {
+        "question": "Hvordan får jeg mine penge tilbage?",
+        "answer": "Når vi har modtaget og godkendt din returvare, overfører vi pengene tilbage til den oprindelige betalingsmetode."
+      }
+    ]
+  }
+  

@@ -19,15 +19,25 @@ function ProductCard({ product }: { product: Product }) {
           variant="top"
           src={`/images/${product.imageUrl}`}
           className="product-image"
+          data-testid="product-card-image"
         />
         <Card.Body className="card-body-fixed">
-          <Card.Title>{product.title}</Card.Title>
-          <Card.Text className="short-description-fixed text-muted small">
+          <Card.Title data-testid="product-card-title">
+            {product.title}
+          </Card.Title>
+          <Card.Text
+            className="short-description-fixed text-muted small"
+            data-testid="product-card-short-description"
+          >
             {product.shortDescription}
           </Card.Text>
-          <Card.Text>{product.price} DKK</Card.Text>
+          <Card.Text data-testid="product-card-price">
+            {product.price} DKK
+          </Card.Text>
           <StockStatus stockStatusFromProduct={product.stockStatus} />
-          <Button variant="dark">Se mere</Button>
+          <Button variant="dark" data-testid="product-card-button">
+            Se mere
+          </Button>
         </Card.Body>
       </Card>
     </Link>
