@@ -1,4 +1,3 @@
-//Together
 interface Product {
   id: number;
   articleNumber: string;

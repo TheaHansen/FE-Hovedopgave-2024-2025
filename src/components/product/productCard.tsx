@@ -6,7 +6,6 @@ import Product from "../product/Product.interfaces";
 import StockStatus from "../stockStatus/StockStatus";
 import { Link } from "react-router-dom";
 
-//Together
 function ProductCard({ product }: { product: Product }) {
   if (!product) {
     return <p>Loading...</p>;

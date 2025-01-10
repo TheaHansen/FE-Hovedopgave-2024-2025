@@ -2,13 +2,11 @@ import { Button, Col, Row } from "react-bootstrap";
 import CustomForm from "../components/checkOut/CustomForm";
 import PaymentOptions from "../components/checkOut/PaymentOptions";
 import TermsAndConditionsCheckBox from "../components/checkOut/TermsAndConditionsCheckBox";
-import { useBasket } from "../context/BasketContext";
 import "../customCSS/checkOut/forms.css";
 import ShipmentOptions from "../components/checkOut/ShipmentOptions";
 import OrderList from "../components/checkOut/OrderList";
 
 function Checkout() {
-  const { basketItems } = useBasket();
   return (
     <div className="px-5 py-4">
       <Row>

@@ -11,7 +11,7 @@ import { useState } from "react";
 import { Dropdown } from "react-bootstrap";
 import LogoButton from "./LogoButton";
 
-//Made together
+
 function NavigationBar() {
   const [showRightDropdown, setShowRightDropdown] = useState(false);
   return (

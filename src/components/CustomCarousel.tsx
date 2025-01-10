@@ -5,7 +5,7 @@ import { getRequest } from "../services/requests";
 import ToPageButton from "./ToPageButton";
 import "../customCSS/carousel.css";
 
-//Made by Thea
+
 interface CustomCarouselProps {
   endpoint: string;
 }

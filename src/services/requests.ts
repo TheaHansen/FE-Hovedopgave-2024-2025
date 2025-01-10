@@ -1,6 +1,5 @@
 const apiUrl = import.meta.env.VITE_API_URL;
 
-//Together
 async function getRequest(endpoint: string): Promise<any> {
   if (!apiUrl) {
     console.log("API URL is not defined");

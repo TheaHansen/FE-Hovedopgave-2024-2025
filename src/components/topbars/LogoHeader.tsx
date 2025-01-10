@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import LogoImage from "/images/logo/odontologicLogoSized.jpg";
 
-//Made by Thea
+
 function LogoHeader() {
   return (
     <Navbar>

@@ -1,7 +1,6 @@
 import CustomCarousel from "../components/CustomCarousel";
 import QuoteHeader from "../components/topbars/QuoteHeader";
 
-//Made by Thea
 interface FrontPageProps {
   headline: string;
   endpoint: string;

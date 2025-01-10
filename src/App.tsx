@@ -15,7 +15,6 @@ import FAQ from "./pages/FAQ";
 import AboutUs from "./pages/AboutUs";
 import ScrollspyTop from "./components/ScrollspyTop";
 
-//Together
 function App() {
   return (
     <BasketProvider>
@@ -42,7 +41,7 @@ function App() {
                   endpoint="products/tilbud"
                   breadcrumbItems={[
                     { label: "Hjem", path: "/" },
-                    { label: "Tilbud" }
+                    { label: "Tilbud" },
                   ]}
                 />
               }
@@ -55,7 +54,7 @@ function App() {
                   breadcrumbItems={[
                     { label: "Hjem", path: "/" },
                     { label: "Alle produkter", path: "/alle-produkter" },
-                    { label: "Produkt" } 
+                    { label: "Produkt" },
                   ]}
                 />
               }
@@ -69,12 +68,15 @@ function App() {
             <Route
               path="/alle-produkter"
               element={
-                <ProductOverview headline="Alle produkter" endpoint="products" />
+                <ProductOverview
+                  headline="Alle produkter"
+                  endpoint="products"
+                />
               }
             />
 
             <Route path="/checkOut" element={<CheckOut />} />
-            
+
             <Route
               path="/amotio"
               element={
@@ -83,8 +85,8 @@ function App() {
                   endpoint="products/amotio"
                   breadcrumbItems={[
                     { label: "Hjem", path: "/" },
-                    { label: "Instrumenter", path: "/instrumenter"},
-                    { label: "Amotio" }
+                    { label: "Instrumenter", path: "/instrumenter" },
+                    { label: "Amotio" },
                   ]}
                 />
               }
@@ -96,9 +98,10 @@ function App() {
                   headline="Endodonti"
                   endpoint="products/endodonti"
                   breadcrumbItems={[
-                    {label: "Hjem", path: "/"},
-                    {label: "Instumenter", path: "/instrumenter"},
-                    {label: "Endodonti"}]}
+                    { label: "Hjem", path: "/" },
+                    { label: "Instumenter", path: "/instrumenter" },
+                    { label: "Endodonti" },
+                  ]}
                 />
               }
             />
@@ -109,25 +112,36 @@ function App() {
                   headline="Instrumenter"
                   endpoint="products/instrumenter"
                   breadcrumbItems={[
-                    {label: "Hjem", path: "/"}, 
-                    {label: "Instrumenter"}]}
+                    { label: "Hjem", path: "/" },
+                    { label: "Instrumenter" },
+                  ]}
                 />
               }
             />
 
-            <Route 
-              path="/FAQ" 
-              element={<FAQ breadcrumbItems={[
-                {label: "Hjem", path: "/"},
-                {label: "FAQ"}]}/>} />
-             
-             <Route
-               path="/om-os"
-               element={<AboutUs breadcrumbItems={[
-                {label: "Hjem", path: "/"},
-                {label: "Om os"}]} />}
-              />
+            <Route
+              path="/FAQ"
+              element={
+                <FAQ
+                  breadcrumbItems={[
+                    { label: "Hjem", path: "/" },
+                    { label: "FAQ" },
+                  ]}
+                />
+              }
+            />
 
+            <Route
+              path="/om-os"
+              element={
+                <AboutUs
+                  breadcrumbItems={[
+                    { label: "Hjem", path: "/" },
+                    { label: "Om os" },
+                  ]}
+                />
+              }
+            />
           </Routes>
         </div>
         <ScrollspyTop />
